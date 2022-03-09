@@ -1,0 +1,168 @@
+body{
+    margin: 0 auto;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #333;
+    
+}
+
+.nav-list{
+    margin-bottom: 50px;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #2e7cf6;
+
+}
+
+.header-link{
+    width: auto;
+    margin-left: 50px;
+    font-size: small;
+    display: flex;
+    align-items: center;
+}
+
+.list-link{
+    display: flex;
+
+}
+
+.link{
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #eee;
+}
+
+.profil-content{
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-left: 50px;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.img-logo{
+    width: 40px;
+    margin-right: 20px;
+}
+.compte{
+    display: flex;
+    align-items: center;
+    margin-left: 80%;   
+    width: 200px;
+    height: 100%;
+}
+
+.img-compte{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.profil{
+    color: white;
+}
+
+.body-content{
+    display: flex;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    color: #7c7a7a;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.nav-area{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav{
+    width: 20%;
+    background-color: #f8f9fa;
+    height: 800px;
+    box-shadow: 2px 0 0  0 10px   black;
+}
+
+.nav-content{
+    margin-top: 50px;
+    
+}
+
+.dash-content{
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+}
+
+.back-grey{
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    width: 100%;
+    height: 8%;
+}
+
+.body-SA{
+    margin-left: 50px ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+}
+
+.home{
+    width: 30px;
+    height: 25px ;
+    margin-right: 25px;
+}
+
+.diagram-contenair{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.data-one{
+    width: 200px;
+    height: 150px;
+    background-color: #2e7cf6;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.pp{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
