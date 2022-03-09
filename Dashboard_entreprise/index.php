@@ -71,8 +71,8 @@
                 <div class="data-one">
                     <p class="pp">Administration</p>
                     <?php
-                        $REQUEST = COUNT(`Nom de la structure`)
-                        
+                        // on affiche la variable count
+                        echo $count;                        
                     ?>
                 
                 </div>
