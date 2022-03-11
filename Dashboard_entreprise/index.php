@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
     <?php 
@@ -68,34 +69,112 @@
                 </div>
             </div>
             <div class="diagram-contenair">
-                <div class="data-one">
-                    <p class="pp">Administration</p>
-                    <?php
-                        // on affiche la variable count
-                        echo $count;                        
-                    ?>
-                
+            <div class="title-contenair">
+                    <div class="title-content">
+                    <p>Administration</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_admin;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">Agriculture</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>Agriculture</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_agri;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">commerce</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>commerce</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_comm;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">Construction</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>construction</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_cons;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">Industire</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>industrie</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_indu;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">Services</p>
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>Services</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count;                        
+                            ?>
+                    </div>
                 </div>
             </div>
+            <div>
+                <div class='diagram-content'>
+            <canvas id="myChart" style="width:100%;max-width:750px"></canvas>
+
+            <script>
+            var xValues = ["Administration", "Agriculture", "Commerce", "Construction", "Industire" ,"Services"];
+            var yValues =
+            [
+                <?php
+                    echo "$count_admin,";
+                    echo "$count_agri," ;
+                    echo "$count_comm," ;
+                    echo "$count_cons,";
+                    echo "$count_indu,";
+                    echo "$count";
+                ?>
+            ];
+            var barColors = [
+            "#b91d47",
+            "#1e7145",
+            "#2b5797",
+            "#e8c3b9",
+            "#00aba9",
+            "blue"
+            ];
+
+            new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                title: {
+                display: true,
+                text: "Secteur d'activité"
+                }
+            }
+            });
+            </script>         
+            </div>
+        </div>   
         </section>
 </section>
 </body>

@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
+<?php 
+        include ('main.php');
+    ?>
     <section class="header-content">
         <div class="title">   
                 <img class="img-logo" src="img/R (9).png" alt="">
@@ -65,24 +69,88 @@
                 </div>
             </div>
             <div class="diagram-contenair">
-                <div class="data-one">
-                    <p class="pp">GE</p>
-
+            <div class="title-contenair">
+                    <div class="title-content">
+                    <p>TPE</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_tpe;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">ETI</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>PME</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_pme;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">PME</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>ETI</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_eti;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">TPE</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>GE</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_ge;                        
+                            ?>
+                    </div>
                 </div>
                 
             </div>
+            <div>
+                <div class='diagram-content'>
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+            var xValues = ["TPE", "PME", "ETI", "GE"];
+            var yValues = [
+                <?php
+                    echo "$count_tpe,";
+                    echo "$count_pme," ;
+                    echo "$count_eti," ;
+                    echo "$count_ge";
+                ?>
+            ];
+            var barColors = [
+            "#b91d47",
+            "#1e7145",
+            "#2b5797",
+            "#e8c3b9",
+            ];
+
+            new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                title: {
+                display: true,
+                text: "Taille de la structure"
+                }
+            }
+            });
+            </script>         
+            </div>
+        </div> 
         </section>
 </section>
 </body>

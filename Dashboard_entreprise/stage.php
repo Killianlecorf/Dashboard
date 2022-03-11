@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
+<?php 
+        include ('main.php');
+    ?>
     <section class="header-content">
         <div class="title">   
                 <img class="img-logo" src="img/R (9).png" alt="">
@@ -65,16 +69,63 @@
                 </div>
             </div>
             <div class="diagram-contenair">
-                <div class="data-one">
-                    <p class="pp">NON</p>
-
+            <div class="title-contenair">
+                    <div class="title-content">
+                    <p>OUI</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                               echo $count_yes ;                        
+                            ?>
+                    </div>
                 </div>
-                <div class="data-one">
-                    <p class="pp">OUI</p>
-
+                <div class="title-contenair">
+                    <div class="title-content">
+                    <p>NON</p>
+                    </div>
+                    <div class="data-one">
+                        <?php
+                                echo $count_no;                        
+                            ?>
+                    </div>
                 </div>
-                
             </div>
+            <div>
+                <div class='diagram-content'>
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+            var xValues = ["oui", "non"];
+            var yValues = [
+                <?php
+                    echo "$count_yes,";
+                    echo "$count_no," ;
+                ?>
+            ];
+            var barColors = [
+            "#b91d47",
+            "#1e7145"
+            ];
+
+            new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                title: {
+                display: true,
+                text: "Entreprise qui prend en stage"
+                }
+            }
+            });
+            </script>         
+            </div>
+        </div>
         </section>
 </section>
 </body>
