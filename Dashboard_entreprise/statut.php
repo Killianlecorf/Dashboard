@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Entreprise</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
 </head>
 <body>
     <?php 
@@ -66,86 +65,85 @@
             <div class="back-grey">
                 <div class="body-SA">
                     <img class="home" src="img/home.png" alt="">
-                    <p class="menu-text">Secteur d'activité</p>
+                    <p class="menu-text">Statut de l'entreprise</p>
                 </div>
             </div>
             <div class="diagram-contenair">
             <div class="title-contenair">
                     <div class="title-content">
-                    <p>Administration</p>
+                    <p>Entreprise privé</p>
                     </div>
                     <div class="data-one">
                         <?php
-                                echo $count_admin;                        
+                                echo $count_EP;                        
                             ?>
                     </div>
                 </div>
                 <div class="title-contenair">
                     <div class="title-content">
-                    <p>Agriculture</p>
+                    <p>Association</p>
                     </div>
                     <div class="data-one">
                         <?php
-                                echo $count_agri;                        
+                                echo $count_assos;                        
                             ?>
                     </div>
                 </div>
                 <div class="title-contenair">
                     <div class="title-content">
-                    <p>commerce</p>
+                    <p>Entreprise publique</p>
                     </div>
                     <div class="data-one">
                         <?php
-                                echo $count_comm;                        
+                                echo $count_Epu;                        
                             ?>
                     </div>
                 </div>
                 <div class="title-contenair">
                     <div class="title-content">
-                    <p>construction</p>
+                    <p>collectivité</p>
                     </div>
                     <div class="data-one">
                         <?php
-                                echo $count_cons;                        
+                                echo $count_col;                        
                             ?>
                     </div>
                 </div>
                 <div class="title-contenair">
                     <div class="title-content">
-                    <p>industrie</p>
+                    <p>Admin. publique</p>
                     </div>
                     <div class="data-one">
                         <?php
-                                echo $count_indu;                        
+                                echo $count_AP;                        
                             ?>
                     </div>
                 </div>
                 <div class="title-contenair">
                     <div class="title-content">
-                    <p>Services</p>
+                    <p>Etab. fermé</p>
                     </div>
                     <div class="data-one">
                         <?php
-                                echo $count;                        
+                                echo $count_EF;                        
                             ?>
                     </div>
                 </div>
             </div>
-            <div>
-                <div class='diagram-content'>
+            <div class='diagram-content'>
             <canvas id="myChart" style="width:100%;max-width:750px"></canvas>
 
             <script>
-            var xValues = ['Administration' , 'Agriculture' , 'Commerce' , 'Construction' , 'Industrie' , 'Services'  ];
+            var xValues = ['Etablissement privé' , 'Association' , 'Entreprise publique' , 'Collectivité' , 'Administration publique' , 'Etablissement fermé'  ];
             var yValues =
             [
                 <?php
-                    echo "$count_admin,";
-                    echo "$count_agri," ;
-                    echo "$count_comm," ;
-                    echo "$count_cons,";
-                    echo "$count_indu,";
-                    echo "$count";
+                    echo "$count_EP,";
+                    echo "$count_assos," ;
+                    echo "$count_Epu," ;
+                    echo "$count_col,";
+                    echo "$count_AP,";
+                    echo "$count_EF";
                 ?>
             ];
             var barColors = [
@@ -158,7 +156,7 @@
             ];
 
             new Chart("myChart", {
-            type: "pie",
+            type: "bar",
             data: {
                 labels: xValues,
                 datasets:  [{
@@ -175,7 +173,6 @@
             });
             </script>         
             </div>
-        </div>   
         </section>
 </section>
 </body>

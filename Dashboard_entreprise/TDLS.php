@@ -52,7 +52,7 @@
                             <a href="stage.php">Stage</a>
                         </li>
                         <li class="nav-list">
-                            <a href="Activit%C3%A9.php">Activité</a>
+                            <a href="statut.php">Statut de l'entreprise</a>
                         </li>
                         <li class="nav-list">
                             <a href="ZG.php">Zone géographique</a>
@@ -113,7 +113,7 @@
             </div>
             <div>
                 <div class='diagram-content'>
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            <canvas id="myChart" style="width:100%;max-width:750px"></canvas>
 
             <script>
             var xValues = ["TPE", "PME", "ETI", "GE"];

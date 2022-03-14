@@ -78,4 +78,84 @@ foreach( $mysqlConnection ->query('SELECT `Taille de la structure` , COUNT(`Nom 
 {
     $count_ge = $REQUEST["count_ge"];
 }
+
+//  Statut
+
+foreach( $mysqlConnection ->query('SELECT `Statut_Type de structure` , COUNT(`Nom de la structure`) as count_EP FROM `bdd` WHERE `Statut_Type de structure`="Entreprise privée";')as $REQUEST)
+{
+    $count_EP = $REQUEST["count_EP"];
+}
+
+
+foreach( $mysqlConnection ->query('SELECT `Statut_Type de structure` , COUNT(`Nom de la structure`) as count_assos FROM `bdd` WHERE `Statut_Type de structure`="Association";')as $REQUEST)
+{
+    $count_assos = $REQUEST["count_assos"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Statut_Type de structure` , COUNT(`Nom de la structure`) as count_Epu FROM `bdd` WHERE `Statut_Type de structure`="Etablissement public";')as $REQUEST)
+{
+    $count_Epu = $REQUEST["count_Epu"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Statut_Type de structure` , COUNT(`Nom de la structure`) as count_col FROM `bdd` WHERE `Statut_Type de structure`="Collectivité";')as $REQUEST)
+{
+    $count_col = $REQUEST["count_col"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Statut_Type de structure` , COUNT(`Nom de la structure`) as count_AP FROM `bdd` WHERE `Statut_Type de structure`="Administration publique";')as $REQUEST)
+{
+    $count_AP = $REQUEST["count_AP"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Statut_Type de structure` , COUNT(`Nom de la structure`) as count_EF FROM `bdd` WHERE `Statut_Type de structure`="Etablissement fermé";')as $REQUEST)
+{
+    $count_EF = $REQUEST["count_EF"];
+}
+
+
+
+// Zone géographique
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_MRN FROM `bdd` WHERE `Zone Géographique` ="Métropole Rouen Normandie (hors Ville de Rouen)";')as $REQUEST)
+{
+    $count_MRN = $REQUEST["count_MRN"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_AR FROM `bdd` WHERE `Zone Géographique`="Arrondissement de Rouen (hors Métropole)";')as $REQUEST)
+{
+    $count_AR = $REQUEST["count_AR"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_rouen FROM `bdd` WHERE `Zone Géographique`="Rouen";')as $REQUEST)
+{
+    $count_rouen = $REQUEST["count_rouen"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_eure FROM `bdd` WHERE `Zone Géographique`="Eure";')as $REQUEST)
+{
+    $count_eure = $REQUEST["count_eure"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_HN FROM `bdd` WHERE `Zone Géographique`="Hors Normandie";')as $REQUEST)
+{
+    $count_HN = $REQUEST["count_HN"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_norm FROM `bdd` WHERE `Zone Géographique`="Normandie (hors 27 et 76)";')as $REQUEST)
+{
+    $count_norm = $REQUEST["count_norm"];
+}
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_hav FROM `bdd` WHERE `Zone Géographique`="Arrondissement du Havre";')as $REQUEST)
+{
+    $count_hav = $REQUEST["count_hav"];
+}
+
+
+foreach( $mysqlConnection ->query('SELECT `Zone Géographique` , COUNT(`Nom de la structure`) as count_die FROM `bdd` WHERE `Zone Géographique`="Arrondissement de Dieppe";')as $REQUEST)
+{
+    $count_die = $REQUEST["count_die"];
+}
+
+
 ?>
